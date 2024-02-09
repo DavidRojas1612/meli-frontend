@@ -1,0 +1,40 @@
+.contentContainer {
+  width: 100%;
+  max-width: 1024px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.categoriesContainer {
+  display: flex;
+  gap: 0.75rem; 
+  margin-bottom: 1rem; 
+  align-items: center;
+
+  .categoryPath {
+    display: flex;
+    gap: 0.75rem;
+
+    .pathSegment {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem; 
+      color: #6b7280;
+      gap: 0.75rem;
+
+
+      &:after {
+        content: '>';
+        display: block;
+      }
+
+      &:last-of-type {
+        &:after {
+          content: '';
+        }
+
+        font-weight: 600; 
+      }
+    }
+  }
+}

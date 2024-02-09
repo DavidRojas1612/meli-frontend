@@ -1,6 +1,8 @@
-import { useNavigate } from "@remix-run/react";
 import { Search } from "lucide-react";
 import { FormEventHandler, useRef } from "react";
+import { useNavigate } from "react-router";
+
+import styles from "./styles.module.scss";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -16,18 +18,15 @@ function Navbar() {
   };
 
   return (
-    <header className="bg-yellow-300 py-2 px-6 w-full flex justify-center">
-      <nav className="max-w-screen-lg w-full flex gap-12">
+    <header className={styles.header}>
+      <nav className={styles.navbar}>
         <div>
-          <a
-            href="/"
-            className="bg-no-repeat overflow-hidden h-[34px] w-[134px] -indent-[999px] flex static bg-[url(https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.15/mercadolibre/logo_large_plus.webp)]"
-          >
+          <a href="/" className={styles.logoContainer}>
             Mercado Libre Colombia - Donde comprar y vender de todo
           </a>
         </div>
-        <form className="relative w-full" onSubmit={handleSubmit}>
-          <label htmlFor="query" className="hidden">
+        <form className={styles.searchForm} onSubmit={handleSubmit}>
+          <label htmlFor="query" className={styles.searchLabel}>
             search label
           </label>
           <input
@@ -35,10 +34,10 @@ function Navbar() {
             type="text"
             name="query"
             id="query"
-            className="relative text-base m-0 rounded-sm bg-white flex h-10 w-full border-solid color-[rgba(0,0,0,.8980392157)] shadow-[0_1px_2px_0_rgba(0,0,0,.2)] p-[10px_60px_10px_15px] border-[rgba(0,0,0,0)]"
+            className={styles.searchInput}
           />
           <button
-            className="absolute top-0 right-0 w-10 h-full flex items-center justify-center before:content-[''] before:block before:h-[30px] before:border-l-[1px] before:border-solid before:border-l-[#e6e6e6] before:absolute before:top-[7px] before:left-0"
+            className={styles.searchButton}
             type="submit"
             onClick={(e) => {
               if (!inputRef.current?.value) {
@@ -47,12 +46,13 @@ function Navbar() {
                 inputRef.current?.focus();
               }
             }}
-          ></button>
+          >
+            <Search strokeWidth={1} className={styles.searchIcon} />
+          </button>
         </form>
       </nav>
     </header>
   );
 }
 
-<Search strokeWidth={1} className="text-gray-300" />;
 export default Navbar;

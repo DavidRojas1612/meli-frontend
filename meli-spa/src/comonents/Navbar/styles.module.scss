@@ -1,0 +1,77 @@
+.header {
+  background-color: #FDE047;
+  padding: 8px 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  max-width: 1024px;
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.logoContainer {
+  width: 134px;
+  height: 34px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  display: flex;
+  position: static;
+  text-indent: -999px;
+  background-image: url('https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.15/mercadolibre/logo_large_plus.webp');
+}
+
+.searchForm {
+  width: 100%;
+  position: relative;
+}
+
+.searchLabel {
+  display: none;
+}
+
+.searchInput {
+  position: relative;
+  font-size: 1rem/* 16px */;
+  line-height: 1.5rem/* 24px */;
+  margin: 0px;
+  border-radius: 0.125rem;
+  background-color: white;
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-style: solid;
+  border-color: rgba(0,0,0,0);
+  padding: 10px 60px 10px 15px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+}
+
+.searchButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 30px;
+    border-left: 1px solid #e6e6e6;
+    position: absolute;
+    top: 7px;
+    left: 0;
+  }
+}
+
+.searchIcon {
+  width: 30px;
+  height: 30px;
+  color: #B0B0B0;
+}
